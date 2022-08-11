@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Liste des Offres
+{% endblock %}
+{% block body %}
+
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+
+            {% for o in offres  %}
+            <div class="row p-2 bg-white border rounded">
+                <img class="card-img-top" src="/img/assistant.jpg" style="width:360px;height:240px" alt="Card image cap" ><div class="col-md-10">
+
+                    <div class="col-md-6 mt-1">
+                        <h5>{{ o.TitreOffre }}</h5>
+
+                        <h5>{{ o.Salaire }}</h5>
+                        <h5>{{ o.Poste }}</h5>
+
+
+
+                        <div class="d-flex flex-row">
+                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                        </div>
+                        <div class="mt-1 mb-1 spec-1"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="mt-1 mb-1 spec-1"><span class="dot"><span class="dot"></span></div>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+
+
+                        <div class="d-flex flex-column mt-4"><a  href="{{ path('app_offre_show', {'id': o.id}) }}" class="btn btn-primary btn-sm" type="button">Details</a><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

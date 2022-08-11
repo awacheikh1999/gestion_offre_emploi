@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cv index{% endblock %}
+
+{% block body %}
+    <h1>Cv index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                </br></br></br>
+                <th>Nom</th>
+                </br></br></br>
+                <th>Prenom</th>
+                </br></br></br>
+                <th>Age</th>
+                </br></br></br>
+                <th>Adresse</th>
+                </br></br></br>
+                <th>Email</th>
+                </br></br></br>
+                <th>Telephone</th>
+                </br></br></br>
+                <th>Specialite</th>
+                </br></br></br>
+                <th>Niveau</th>
+                </br></br></br>
+                <th>Experience</th>
+                </br></br></br>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cv in cvs %}
+            <tr>
+                <td>{{ cv.id }}</td>
+                <td>{{ cv.Nom }}</td>
+                <td>{{ cv.Prenom }}</td>
+                <td>{{ cv.Age }}</td>
+                <td>{{ cv.Adresse }}</td>
+                <td>{{ cv.Email }}</td>
+                <td>{{ cv.Telephone }}</td>
+                <td>{{ cv.Specialite }}</td>
+                <td>{{ cv.Niveau }}</td>
+                <td>{{ cv.Experience }}</td>
+                <td>
+                    <a href="{{ path('app_cv_show', {'id': cv.id}) }}">show</a>
+                    <a href="{{ path('app_cv_edit', {'id': cv.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cv_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offre{% endblock %}
+
+{% block body %}
+    <h1>Offre</h1>
+
+    <table class="table table-bordered table-responsive-md">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ offre.id }}</td>
+            </tr>
+            <tr>
+                <th>TitreOffre</th>
+                <td>{{ offre.TitreOffre }}</td>
+            </tr>
+
+
+
+
+            <tr>
+                <th>Entreprise</th>
+                <td>{{ offre.Entreprise }}</td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>{{ offre.Poste }}</td>
+            </tr>
+            <tr>
+                <th>Disponiblite</th>
+                <td>{{ offre.Disponiblite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+    <a class="btn-solid-lg" href="/login">Postuler...</a>
+
+{% endblock %}
